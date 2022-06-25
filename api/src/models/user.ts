@@ -9,6 +9,9 @@ class User {
     lastname!: string
 
     @prop()
+    username!: string
+
+    @prop()
     email!: string
 
     @prop({ require: true })
