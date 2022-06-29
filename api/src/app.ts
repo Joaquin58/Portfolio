@@ -32,6 +32,6 @@ app.use((err: error, req: Request, res: Response, next: NextFunction) => {
     res.status(status).send(messege)
 });
 
-app.use('/user', routes);
+app.use('/', routes);
 
 export default app
