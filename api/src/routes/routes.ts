@@ -1,6 +1,6 @@
-import { Response, Request, Router, NextFunction } from 'express'
+import { Router } from 'express'
 import admin from "../controllers/admin"
-
+import projects from "../controllers/proyects"
 const app = Router()
 
 // app.get("/", (req: Request, res: Response) => {
@@ -21,5 +21,7 @@ const app = Router()
 // })
 
 app.use("/admin", admin)
+
+app.use("/projects", projects)
 
 export default app
