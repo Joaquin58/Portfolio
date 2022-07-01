@@ -1,11 +1,11 @@
 import { prop, getModelForClass, pre, types, PropType, DocumentType, ReturnModelType } from '@typegoose/typegoose'
 import { genSalt, compare, hash } from "bcrypt"
 
-@pre<User>('save', async function (next) {
-    const salt = await genSalt()
-    this.password = await hash(this.password, salt)
-    next()
-})
+// @pre<User>('save', async function (next) {
+//     const salt = await genSalt()
+//     this.password = await hash(this.password, salt)
+//     next()
+// })
 //! agregar el metodo de comparacion
 
 class User {
