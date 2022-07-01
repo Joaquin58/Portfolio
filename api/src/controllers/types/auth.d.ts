@@ -10,3 +10,9 @@ export declare interface createuser {
     email: string,
     password: string
 }
+
+export declare interface IdPayload {
+    id: string
+    username: string
+    iat: number
+}
