@@ -13,6 +13,7 @@ dbPassword: process.env.DB_PASSWORD || 'Superadmin',
       port: process.env.API_PORT || '3001',
       host: process.env.API_host || 'localhost',
       cors: process.env.CORS || 'localhost:3000',
+      PrivetKey1: process.env.PRIVATE_KEY1 || ""
 }
 
 export default config;
