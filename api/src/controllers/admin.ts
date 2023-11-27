@@ -39,7 +39,7 @@ route.post("/login", async (req: Request, res: Response) => {
         error: "invalid user or password"
     })
 
-    const userForToken: { id: string, username: string } = {
+    const userForToken: { id: Object , username: string } = {
         id: user._id,
         username: user.username
     }
