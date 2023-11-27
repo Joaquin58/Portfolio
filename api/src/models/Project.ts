@@ -13,6 +13,14 @@ class Project {
 
     @prop({ require: true })
     description!: string
+
+    @prop()
+    fechas!: string
+
+    @prop({ type: () => [String] })
+    tecnologias!: string[]
+
+    
 }
 
 const projectModel = getModelForClass(Project)
