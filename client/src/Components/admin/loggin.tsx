@@ -1,8 +1,17 @@
-import React from 'react'
-import home from 'Components/Home/home'
+import React, { MouseEvent } from 'react'
+
 const loggin = () => {
+  function getusers(e: MouseEvent<HTMLButtonElement>) {
+    e.preventDefault()
+    
+  }
   return (
-    <div>loggin</div>
+    <div>loggin
+      <div>
+
+      <button onClick={getusers}>get users</button>
+      </div>
+    </div>
   )
 }
 

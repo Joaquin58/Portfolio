@@ -1,8 +1,16 @@
 import React from 'react'
-import loggin from 'Components/admin/loggin'
+import { Link } from 'react-router-dom'
+
 const home = () => {
   return (
-    <div>home</div>
+    <div>
+      home
+      <Link to="/loggin" >
+        <button>
+          loggin
+        </button>
+      </Link>
+    </div>
   )
 }
 
