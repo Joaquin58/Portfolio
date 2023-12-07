@@ -1,28 +1,33 @@
-import { prop, getModelForClass } from '@typegoose/typegoose'
+import { ProyectDocument } from "controllers/types/project";
+import mongoose, { Document, Schema } from "mongoose";
 
-class Project {
+const proyectoSchema = new Schema<ProyectDocument>({
+    nombre: { type: String, required: true },
+    descripcion: { type: String, required: true },
+    url: String,
+    tecnologias: [
+        {
+            nombre: { type: String, required: true },
+            version: String,
+            categoria: String,
+        },
+    ],
+    cliente: {
+        nombre: String,
+        empresa: String,
+        contacto: String
+    },
+    fecha_inicio: { type: Date, required: true },
+    fecha_fin: Date,
+    capturas_pantalla: [String],
+    etiquetas: [String],
+    proyecto_destacado: { type: Boolean, default: false },
+    autor: {
+        type: Schema.Types.ObjectId,
+        ref: "Users",
+    }
+});
 
-    @prop({ require: true }) //propiedades de monsose
-    title!: string //propiedades de typescript
+const Proyecto = mongoose.model<ProyectDocument>("Proyecto", proyectoSchema);
 
-    @prop()
-    url!: string
-
-    @prop()
-    features!: string
-
-    @prop({ require: true })
-    description!: string
-
-    @prop()
-    fechas!: string
-
-    @prop({ type: () => [String] })
-    tecnologias!: string[]
-
-    
-}
-
-const projectModel = getModelForClass(Project)
-
-export default projectModel
+export default Proyecto
