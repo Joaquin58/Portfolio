@@ -1,3 +1,5 @@
+import { ObjectId } from "mongoose"
+
 export declare interface auth {
     username: string
     password: string
@@ -12,7 +14,9 @@ export declare interface createuser {
 }
 
 export declare interface IdPayload {
-    id: string
-    username: string
+    id: ObjectId
+    exp: number
     iat: number
+    username: string
+    role: string
 }
