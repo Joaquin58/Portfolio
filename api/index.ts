@@ -24,12 +24,6 @@ import config from "./src/lib/config"
 
 Mongoosedb
     .then((connect) => {
-        // connect.connection.db.collections()
-        // .then((res) => {
-        //     for (let collection of res) {
-        //         collection.deleteMany({})
-        //     }
-        // })
         console.log(`Conectado a la base de datos ${connect.connection.db.databaseName}! :D`)
         app.listen(config.port, function () {
             console.log("App is listening on port 3001!")
